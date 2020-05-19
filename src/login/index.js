@@ -65,7 +65,7 @@ class Login extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.imageContainer}>
-                    <Image source={require('../../assets/barn.jpg')} resizeMode='contain' />
+                    <Image source={require('../../assets/logo.png')} resizeMode='contain' style={styles.logoImage} />
                 </View>
                 <KeyboardAvoidingView style={styles.inputContainer}>
                     <Text style={styles.heading}>

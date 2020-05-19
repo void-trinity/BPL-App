@@ -10,7 +10,13 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
         flex: 0.4,
-        width
+        width,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    logoImage: {
+        height: height*0.5,
+        width: height*0.5
     },
     inputContainer: {
         flex: 0.6,

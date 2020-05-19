@@ -159,7 +159,7 @@ class SignUp extends React.Component {
                             </View>
                             <TouchableOpacity onPress={() => this.setState({ showDatepicker: true })}>
                                 <Text>
-                                    Date of Birth
+                                    DOB
                                 </Text>
                                 <View style={styles.dateButtonContainer}>
                                     <Text>

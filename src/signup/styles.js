@@ -69,14 +69,16 @@ const styles = StyleSheet.create({
         padding: 5,
         borderWidth: 1,
         borderColor: 'purple',
-        marginRight: 10
+        marginRight: 10,
+        borderRadius: 2
     },
     dateButtonContainer: {
         width: width * 0.3,
         flex: 1,
         padding: 5,
         borderWidth: 1,
-        borderColor: 'purple'
+        borderColor: 'purple',
+        borderRadius: 2,
     }
 });
 
