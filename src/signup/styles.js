@@ -59,10 +59,24 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
     },
     pickerContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        marginVertical: 10,
+    },
+    genderPickerContainer: {
+        width: width * 0.3,
+        padding: 5,
         borderWidth: 1,
         borderColor: 'purple',
+        marginRight: 10
+    },
+    dateButtonContainer: {
         width: width * 0.3,
-        marginVertical: 10,
+        flex: 1,
+        padding: 5,
+        borderWidth: 1,
+        borderColor: 'purple'
     }
 });
 

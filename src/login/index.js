@@ -2,6 +2,7 @@ import * as React from 'react';
 import { View, Text, Image, KeyboardAvoidingView, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
+import { StackActions } from '@react-navigation/native';
 
 import styles from './styles';
 import InputComponent from './input';
@@ -25,10 +26,16 @@ class Login extends React.Component {
                 username, password
             }
         })
-            .then(({ data }) => {
-                AsyncStorage.setItem('token', data.token);
+            .then(async ({ data }) => {
+                await AsyncStorage.setItem('token', data.token);
+                this.props.navigation.dispatch(
+                    StackActions.replace('Bottomnav')
+                );
             })
-            .catch((error) => Alert.alert('Error', 'Something went wrong while trying to log you in, check your username and password or try again after some time.'))
+            .catch((error) => {
+                Alert.alert('Error', 'Something went wrong while trying to log you in, check your username and password or try again after some time.');
+                console.log('Error: ', error);    
+            })
             .finally(() => this.setState({ loggingIn: false }));
     }
 

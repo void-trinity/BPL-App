@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Alert, ActivityIndicator, Button } from 'react-native';
 import axios from 'axios';
 import {Picker} from '@react-native-community/picker';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import Moment from 'moment';
 
 import styles from './styles';
 import InputComponent from './input';
@@ -17,7 +19,9 @@ class SignUp extends React.Component {
             password: '',
             conf_pass: '',
             email: '',
-            gender: 'M'
+            gender: 'M',
+            showDatepicker: false,
+            date: Date.now()
         }
     }
 
@@ -39,10 +43,10 @@ class SignUp extends React.Component {
     trySignup = () => {
         this.setState({ signingUp: true });
         if (this.validateFields()) {
-            const { username, password, fullname, email, gender } = this.state;
+            const { username, password, fullname, email, gender, date } = this.state;
             axios.post(`${BASEURL}/api/add/user`, {
                 user: {
-                    username, password, fullname, email, gender
+                    username, password, fullname, email, gender, date
                 }
             })
                 .then(() => {
@@ -78,6 +82,31 @@ class SignUp extends React.Component {
                 </TouchableOpacity>
             </>
         );
+    }
+
+    onChangeDate = (event, selectedDate) => {
+        if(event.type === 'dismissed')
+            this.setState({ showDatepicker: false });
+        else
+            this.setState({ date: selectedDate, showDatepicker: false });
+    }
+
+
+    renderDatePicker = () => {
+        if(this.state.showDatepicker) {
+            return (
+                <DateTimePicker
+                    testID="dateTimePicker"
+                    timeZoneOffsetInMinutes={0}
+                    value={this.state.date}
+                    mode='date'
+                    is24Hour={true}
+                    display="default"
+                    onChange={this.onChangeDate}
+                    maximumDate={Date.now()}
+                />
+            );
+        }
     }
 
     render() {
@@ -117,20 +146,33 @@ class SignUp extends React.Component {
                             onChangeText={email => this.setState({ email })}
                         />
                         <View style={styles.pickerContainer}>
-                            <Picker
-                                selectedValue={this.state.gender}
-                                style={{height: 50, width: 100 }}
-                                onValueChange={(itemValue) =>
-                                    this.setState({language: itemValue})
-                            }>
-                                <Picker.Item label="Male" value="M" />
-                                <Picker.Item label="Female" value="F" />
-                            </Picker>
+                            <View style={styles.genderPickerContainer}>
+                                <Picker
+                                    selectedValue={this.state.gender}
+                                    style={{height: 50, width: 100 }}
+                                    onValueChange={(itemValue) =>
+                                        this.setState({language: itemValue})
+                                }>
+                                    <Picker.Item label="Male" value="M" />
+                                    <Picker.Item label="Female" value="F" />
+                                </Picker>
+                            </View>
+                            <TouchableOpacity onPress={() => this.setState({ showDatepicker: true })}>
+                                <Text>
+                                    Date of Birth
+                                </Text>
+                                <View style={styles.dateButtonContainer}>
+                                    <Text>
+                                        {Moment(this.state.date).format('MMMM Do, YYYY')}
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={styles.bottomContainer}>
                         {this.renderBottomArea()}
                     </View>
+                    { this.renderDatePicker() }
                 </ScrollView>
             </View>
         );
