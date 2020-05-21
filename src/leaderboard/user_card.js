@@ -3,11 +3,27 @@ import { View, Text } from 'react-native';
 
 import styles from './styles';
 
+const getRankColor = (rank) => {
+    switch(rank) {
+        case 1: {
+            return { backgroundColor: 'gold' }
+        }
+        case 2: {
+            return { backgroundColor: '#ebebeb' }
+        }
+        case 3: {
+            return { backgroundColor: '#ffa347' }
+        }
+        default: {
+            return { backgroundColor: '#d9fcff' }
+        }
+    }
+}
 
 function UserCard(props) {
     const { rank, fullname, username, totalGames, totalScore } = props.user;
     return(
-        <View style={styles.cardContainer}>
+        <View style={[styles.cardContainer, getRankColor(rank)]}>
             <View style={styles.rankContainer}>
                 <Text style={styles.rankText}>
                     {rank}

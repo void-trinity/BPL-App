@@ -6,6 +6,7 @@ import axios from '../helpers/axios-intercept';
 import UserCard from './user_card';
 import styles from './styles';
 import BASEURL from '../BASEURL';
+import ListEmptyComponent from './listEmptyComponent';
 
 class Leaderboard extends React.Component {
     constructor(props) {
@@ -42,8 +43,7 @@ class Leaderboard extends React.Component {
                     contentContainerStyle={styles.flatListContainer}
                     data={this.state.renderList}
                     renderItem={({ item }) => <UserCard user={item} />}
-                    ItemSeparatorComponent={() => <View style={styles.itemSeperator} />}
-                    ListEmptyComponent={() => <Text style={{ alignSelf: 'center' }}>Seems like nothing's here </Text>}
+                    ListEmptyComponent={() => <ListEmptyComponent />}
                 />
             );
         } else {

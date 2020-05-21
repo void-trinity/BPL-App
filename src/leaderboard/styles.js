@@ -8,7 +8,9 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         justifyContent: 'space-between',
-        height: height * 0.1,
+        height: height * 0.12,
+        margin: 10,
+        borderRadius: 10
     },
     rankContainer: {
         flex: 0.2,
@@ -24,7 +26,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end'
     },
     rankText: {
-        color: '#ababab',
+        color: 'rgba(0,0,0,0.3)',
         fontWeight: 'bold'
     },
     fullnameText: {
@@ -33,8 +35,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     usernameText: {
-        fontStyle: 'italic',
-        color: '#00b7ff'
+        color: 'rgba(0,0,0,0.3)',
+        fontWeight: 'bold'
     },
     itemSeperator: {
         width: width * 0.9,
@@ -83,6 +85,10 @@ const styles = StyleSheet.create({
     },
     flatListContainer: {
         width
+    },
+    emptyComponentContainer: {
+        flex: 1,
+        alignItems: 'center'
     }
 });
 
