@@ -23,11 +23,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginVertical: height * 0.02,
         paddingHorizontal: 5,
-        borderColor: 'purple'
+        borderColor: '#00b7ff'
     },
     heading: {
         fontWeight: 'bold',
-        color: 'purple',
+        color: '#00b7ff',
         fontSize: 28,
         marginVertical: 20,
         marginLeft: 30
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         width: 0.07*height * 2,
         marginRight: 5,
         marginTop: 20,
-        backgroundColor: 'purple',
+        backgroundColor: '#00b7ff',
         borderRadius: 100,
         alignSelf: 'flex-end',
         alignItems: 'center',
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     },
     signupText: {
         fontWeight: 'bold',
-        color: 'blue',
+        color: '#00b7ff',
         textDecorationLine: 'underline',
     },
     pickerContainer: {
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         width: width * 0.3,
         padding: 5,
         borderWidth: 1,
-        borderColor: 'purple',
+        borderColor: '#00b7ff',
         marginRight: 10,
         borderRadius: 2
     },
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 5,
         borderWidth: 1,
-        borderColor: 'purple',
+        borderColor: '#00b7ff',
         borderRadius: 2,
     }
 });

@@ -6,26 +6,28 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        backgroundColor: 'white'
     },
     imageContainer: {
-        flex: 0.4,
+        flex: 0.3,
         width,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'center'
     },
     logoImage: {
-        height: height*0.5,
-        width: height*0.5
+        height: height*0.4,
+        width: height*0.4
     },
     inputContainer: {
-        flex: 0.6,
+        flex: 0.7,
         borderTopRightRadius: 20,
         borderTopLeftRadius: 20,
         width,
         backgroundColor: 'white',
         padding: 30,
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        elevation: 10
     },
     inputBox: {
         borderWidth: 1,
@@ -33,11 +35,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginVertical: height * 0.03,
         paddingHorizontal: 5,
-        borderColor: 'purple'
+        borderColor: '#00b7ff'
     },
     heading: {
         fontWeight: 'bold',
-        color: 'purple',
+        color: '#00b7ff',
         fontSize: 28,
         marginVertical: 20
     },
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
         width: 0.07*height * 2,
         marginRight: 5,
         marginTop: 20,
-        backgroundColor: 'purple',
+        backgroundColor: '#00b7ff',
         borderRadius: 100,
         alignSelf: 'flex-end',
         alignItems: 'center',
@@ -60,11 +62,11 @@ const styles = StyleSheet.create({
     bottomContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     signupText: {
         fontWeight: 'bold',
-        color: 'blue',
+        color: '#00b7ff',
         textDecorationLine: 'underline',
     }
 });

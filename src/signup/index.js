@@ -64,7 +64,7 @@ class SignUp extends React.Component {
 
     renderBottomArea = () => {
         if (this.state.signingUp)
-            return <ActivityIndicator size='large' color='purple' />
+            return <ActivityIndicator size='large' color='#00b7ff' />
         return (
             <>
                 <View style={{ flexDirection: 'row' }}>

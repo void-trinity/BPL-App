@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { View, Text, Image, KeyboardAvoidingView, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
+import { View, Text, Image, KeyboardAvoidingView, TouchableOpacity, Alert, ActivityIndicator, Platform } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
-import { StackActions } from '@react-navigation/native';
+import { CommonActions } from '@react-navigation/native';
 
 import styles from './styles';
 import InputComponent from './input';
@@ -29,7 +29,12 @@ class Login extends React.Component {
             .then(async ({ data }) => {
                 await AsyncStorage.setItem('token', data.token);
                 this.props.navigation.dispatch(
-                    StackActions.replace('Bottomnav')
+                    CommonActions.reset({
+                      index: 1,
+                      routes: [
+                        { name: 'Bottomnav' },
+                      ],
+                    })
                 );
             })
             .catch((error) => {
@@ -41,7 +46,7 @@ class Login extends React.Component {
 
     renderBottomArea = () => {
         if (this.state.loggingIn)
-            return <ActivityIndicator size='large' color='purple' />
+            return <ActivityIndicator size='large' color='#00b7ff' />
         return (
             <>
                 <View style={{ flexDirection: 'row' }}>
@@ -63,11 +68,11 @@ class Login extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding': 'height'} style={styles.container}>
                 <View style={styles.imageContainer}>
                     <Image source={require('../../assets/logo.png')} resizeMode='contain' style={styles.logoImage} />
                 </View>
-                <KeyboardAvoidingView style={styles.inputContainer}>
+                <View style={styles.inputContainer}>
                     <Text style={styles.heading}>
                         Login
                     </Text>
@@ -87,8 +92,8 @@ class Login extends React.Component {
                     <View style={styles.bottomContainer}>
                         {this.renderBottomArea()}
                     </View>
-                </KeyboardAvoidingView>
-            </View>
+                </View>
+            </KeyboardAvoidingView>
         );
     }
 }
