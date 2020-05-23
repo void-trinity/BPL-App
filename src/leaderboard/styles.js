@@ -6,22 +6,30 @@ const styles = StyleSheet.create({
     cardContainer: {
         flexDirection: 'row',
         flex: 1,
-        padding: 20,
+        paddingHorizontal: 10,
+        paddingVertical: 20,
         justifyContent: 'space-between',
-        height: height * 0.12,
         margin: 10,
         borderRadius: 10
     },
     rankContainer: {
+        flex: 0.05,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    avatarContainer: {
         flex: 0.2,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 10
     },
     nameContainer: {
         flex: 0.6,
-        justifyContent: 'space-between'
+        justifyContent: 'center',
+        padding: 5
     },
     scoreContainer: {
-        flex: 0.2,
+        flex: 0.15,
         justifyContent: 'center',
         alignItems: 'flex-end'
     },
@@ -34,10 +42,6 @@ const styles = StyleSheet.create({
         color: '#6d6d6d',
         fontWeight: 'bold'
     },
-    usernameText: {
-        color: 'rgba(0,0,0,0.3)',
-        fontWeight: 'bold'
-    },
     itemSeperator: {
         width: width * 0.9,
         alignSelf: 'center',
@@ -46,7 +50,7 @@ const styles = StyleSheet.create({
     },
     pointsCard: {
         borderRadius: 5,
-        width: 0.1 * width,
+        width: '100%',
         backgroundColor: '#00b7ff',
         paddingVertical: 5,
         alignItems: 'center'
@@ -56,8 +60,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     gamesText: {
-        fontWeight: 'bold',
-        color: '#6d6d6d'
+        color: 'rgba(0,0,0,0.3)',
+        fontWeight: 'bold'
     },
     headingContainer: {
         width,
@@ -89,7 +93,18 @@ const styles = StyleSheet.create({
     emptyComponentContainer: {
         flex: 1,
         alignItems: 'center'
-    }
+    },
+    thumbnailContainer: {
+        flex: 1,
+        backgroundColor: 'white',
+        padding: 10,
+        borderRadius: 200,
+    },
+    imageThumbnail: {
+        width: '100%',
+        height: undefined,
+        aspectRatio: 1
+    },
 });
 
 export default styles;

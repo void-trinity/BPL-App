@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 import styles from './styles';
+import avatar_uri from '../helpers/avatar_uri_json';
 
 const getRankColor = (rank) => {
     switch(rank) {
@@ -20,8 +21,12 @@ const getRankColor = (rank) => {
     }
 }
 
+getImageUri = (index) => {
+    return avatar_uri[index];
+}
+
 function UserCard(props) {
-    const { rank, fullname, username, totalGames, totalScore } = props.user;
+    const { rank, name, totalGames, totalScore, avatar } = props.user;
     return(
         <View style={[styles.cardContainer, getRankColor(rank)]}>
             <View style={styles.rankContainer}>
@@ -29,12 +34,17 @@ function UserCard(props) {
                     {rank}
                 </Text>
             </View>
+            <View style={styles.avatarContainer}>
+                <View style={styles.thumbnailContainer}>
+                    <Image source={getImageUri(avatar)} style={styles.imageThumbnail} />
+                </View>
+            </View>
             <View style={styles.nameContainer}>
                 <Text style={styles.fullnameText}>
-                    {fullname}
+                    {name}
                 </Text>
-                <Text style={styles.usernameText}>
-                    {`@${username}`}
+                <Text style={styles.gamesText}>
+                    {`${totalGames} games`}
                 </Text>
             </View>
             <View style={styles.scoreContainer}>
@@ -43,9 +53,6 @@ function UserCard(props) {
                         {totalScore}
                     </Text>
                 </View>
-                <Text style={styles.gamesText}>
-                    {`${totalGames} games`}
-                </Text>
             </View>
         </View>
     );

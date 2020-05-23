@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "957298805206",
+    "firebase_url": "https://byara-1590127823477.firebaseio.com",
+    "project_id": "byara-1590127823477",
+    "storage_bucket": "byara-1590127823477.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957298805206:android:cb34d641859b19ddc07c77",
+        "android_client_info": {
+          "package_name": "com.bpl_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957298805206-3s3b3soal0ti7pgqaatqcje6kkjrvpmt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bpl_app",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "957298805206-fplj2up2j61o60sgo0nknrm3637cg960.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzVPjWZ2oZKCjwzxFVgPC516DIK-4EhLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957298805206-fplj2up2j61o60sgo0nknrm3637cg960.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

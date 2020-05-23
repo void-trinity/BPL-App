@@ -6,68 +6,71 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between',
         backgroundColor: 'white'
     },
-    imageContainer: {
-        flex: 0.3,
+    headingContainer: {
+        flex: 0.2,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
         width,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    logoImage: {
-        height: height*0.4,
-        width: height*0.4
-    },
-    inputContainer: {
-        flex: 0.7,
-        borderTopRightRadius: 20,
-        borderTopLeftRadius: 20,
-        width,
-        backgroundColor: 'white',
-        padding: 30,
-        justifyContent: 'space-between',
-        elevation: 10
-    },
-    inputBox: {
-        borderWidth: 1,
-        borderRadius: 2,
-        justifyContent: 'center',
-        marginVertical: height * 0.03,
-        paddingHorizontal: 5,
-        borderColor: '#00b7ff'
+        backgroundColor: 'white'
     },
     heading: {
         fontWeight: 'bold',
-        color: '#00b7ff',
+        color: '#3d3d3d',
         fontSize: 28,
-        marginVertical: 20
+        marginVertical: 10
     },
-    button: {
-        height: 0.07*height,
-        width: 0.07*height * 2,
-        marginRight: 5,
-        marginTop: 20,
-        backgroundColor: '#00b7ff',
-        borderRadius: 100,
-        alignSelf: 'flex-end',
+    imageContainer: {
+        flex: 0.4,
+        width,
+        justifyContent: 'center',
         alignItems: 'center',
-        justifyContent: 'center'
+        backgroundColor: 'white',
     },
-    buttonText: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        color: 'white'
+    logoImage: {
+        height: undefined,
+        width: '100%',
+        aspectRatio: 1
+    },
+    secondaryText: {
+        color: '#ababab',
+        textAlign: 'center'
     },
     bottomContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        flex: 0.2,
+        width,
         alignItems: 'center',
+        backgroundColor: 'white',
     },
-    signupText: {
-        fontWeight: 'bold',
-        color: '#00b7ff',
-        textDecorationLine: 'underline',
+    buttonContainer: {
+        flexDirection: 'row',
+        width,
+        justifyContent: 'space-between',
+        paddingHorizontal: 20,
+        alignItems: 'center',
+        marginTop: height * 0.08,
+    },
+    buttonCard: {
+        width: width*0.4,
+        justifyContent: 'center',
+        padding: 5,
+        alignItems: 'center',
+        aspectRatio: 3,
+        borderRadius: 3,
+        elevation: 3
+    },
+    footerContainer: {
+        flex: 0.2,
+        width,
+        justifyContent: 'flex-end',
+        paddingBottom: 20,
+        paddingHorizontal: 20
+    },
+    footerText: {
+        color: '#ababab',
+        textAlign: 'center',
+        fontSize: 10
     }
 });
 

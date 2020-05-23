@@ -2,7 +2,6 @@ import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from '../login';
-import SignUp from '../signup';
 import BottomNav from './bottomnav';
 import SplashScreen from '../splashscreen';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -36,7 +35,6 @@ class Router extends React.Component {
         return (
             <Stack.Navigator headerMode='none' initialRouteName={this.initialRouteName}>
                 <Stack.Screen name='Login' component={Login} />
-                <Stack.Screen name='Signup' component={SignUp} />
                 <Stack.Screen name='Bottomnav' component={BottomNav} />
             </Stack.Navigator>
         )
