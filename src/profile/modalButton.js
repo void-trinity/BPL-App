@@ -6,7 +6,7 @@ import styles from './styles';
 const ModalButton = (props) => {
     return (
         <TouchableOpacity onPress={props.onPress}>
-            <View style={styles.modalButton}>
+            <View style={props.style}>
                 <Text>
                     {props.title}
                 </Text>

@@ -52,6 +52,9 @@ function UserCard(props) {
                     <Text style={styles.pointsText}>
                         {totalScore}
                     </Text>
+                    <Text style={{...styles.pointsText, fontSize: 8 }}>
+                        POINTS
+                    </Text>
                 </View>
             </View>
         </View>

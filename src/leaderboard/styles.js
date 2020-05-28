@@ -5,8 +5,7 @@ const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
     cardContainer: {
         flexDirection: 'row',
-        flex: 1,
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
         paddingVertical: 20,
         justifyContent: 'space-between',
         margin: 10,
@@ -42,18 +41,14 @@ const styles = StyleSheet.create({
         color: '#6d6d6d',
         fontWeight: 'bold'
     },
-    itemSeperator: {
-        width: width * 0.9,
-        alignSelf: 'center',
-        height: 1,
-        backgroundColor: '#dedede'
-    },
     pointsCard: {
         borderRadius: 5,
+        flex: 1,
         width: '100%',
         backgroundColor: '#00b7ff',
         paddingVertical: 5,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     pointsText: {
         color: 'rgba(255, 255, 255, 0.9)',

@@ -1,2 +1,2 @@
-const BASEURL = 'http://bpl-backend.herokuapp.com';
+const BASEURL = 'https://bpl-backend.herokuapp.com';
 export default BASEURL;

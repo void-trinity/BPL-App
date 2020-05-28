@@ -5,6 +5,7 @@ import Login from '../login';
 import BottomNav from './bottomnav';
 import SplashScreen from '../splashscreen';
 import AsyncStorage from '@react-native-community/async-storage';
+import EventDetails from '../events/event_details';
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,7 @@ class Router extends React.Component {
             <Stack.Navigator headerMode='none' initialRouteName={this.initialRouteName}>
                 <Stack.Screen name='Login' component={Login} />
                 <Stack.Screen name='Bottomnav' component={BottomNav} />
+                <Stack.Screen name='Eventdetails' component={EventDetails} />
             </Stack.Navigator>
         )
     }
